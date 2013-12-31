@@ -1,0 +1,41 @@
+{
+  "name": "gulp-markdown-pdf",
+  "version": "0.0.0",
+  "description": "Markdown to PDF",
+  "license": "MIT",
+  "repository": "sindresorhus/gulp-markdown-pdf",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "markdown",
+    "marked",
+    "md",
+    "compile",
+    "convert",
+    "markup",
+    "pdf",
+    "template",
+    "phantomjs"
+  ],
+  "dependencies": {
+    "event-stream": "~3.0.20",
+    "gulp-util": "~2.2.0",
+    "markdown-pdf": "~2.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
