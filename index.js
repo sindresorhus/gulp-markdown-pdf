@@ -1,10 +1,10 @@
 'use strict';
-var es = require('event-stream');
+var map = require('map-stream');
 var gutil = require('gulp-util');
 var markdownpdf = require('markdown-pdf');
 
 module.exports = function (options) {
-	return es.map(function (file, cb) {
+	return map(function (file, cb) {
 		markdownpdf(options)
 		.from.string(file.contents.toString())
 		.to.buffer(function (err, buffer) {
