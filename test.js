@@ -4,6 +4,8 @@ var gutil = require('gulp-util');
 var markdownpdf = require('./index');
 
 it('should compile Markdown to PDF', function (cb) {
+	this.timeout(5000);
+
 	var stream = markdownpdf();
 
 	stream.on('data', function (file) {

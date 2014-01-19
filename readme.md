@@ -22,7 +22,8 @@ var markdownpdf = require('gulp-markdown-pdf');
 
 gulp.task('default', function () {
 	gulp.src('intro.md')
-		.pipe(markdownpdf());
+		.pipe(markdownpdf())
+		.pipe(gulp.dest('dist'));
 });
 ```
 

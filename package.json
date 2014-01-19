@@ -31,8 +31,8 @@
     "phantomjs"
   ],
   "dependencies": {
-    "map-stream": "~0.0.4",
     "gulp-util": "~2.2.0",
+    "through2": "~0.4.0",
     "markdown-pdf": "~2.1.0"
   },
   "devDependencies": {
