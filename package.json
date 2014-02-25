@@ -31,9 +31,9 @@
     "phantomjs"
   ],
   "dependencies": {
-    "gulp-util": "~2.2.0",
-    "through2": "~0.4.0",
-    "markdown-pdf": "~2.1.0"
+    "gulp-util": "^2.2.0",
+    "through2": "^0.4.0",
+    "markdown-pdf": "^2.2.0"
   },
   "devDependencies": {
     "mocha": "*"
