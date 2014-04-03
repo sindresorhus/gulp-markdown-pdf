@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com)-markdown-pdf [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-markdown-pdf.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-markdown-pdf)
+# [gulp](http://gulpjs.com)-markdown-pdf [![Build Status](https://travis-ci.org/sindresorhus/gulp-markdown-pdf.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-markdown-pdf)
 
 > Markdown to PDF with [markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
@@ -7,14 +7,12 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-markdown-pdf)
-
-```
-npm install --save-dev gulp-markdown-pdf
+```bash
+$ npm install --save-dev gulp-markdown-pdf
 ```
 
 
-## Example
+## Usage
 
 ```js
 var gulp = require('gulp');
@@ -37,4 +35,4 @@ See the markdown-pdf [options](https://github.com/alanshaw/markdown-pdf#options)
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
