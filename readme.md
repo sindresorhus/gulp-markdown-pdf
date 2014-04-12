@@ -19,7 +19,7 @@ var gulp = require('gulp');
 var markdownpdf = require('gulp-markdown-pdf');
 
 gulp.task('default', function () {
-	gulp.src('intro.md')
+	return gulp.src('intro.md')
 		.pipe(markdownpdf())
 		.pipe(gulp.dest('dist'));
 });
