@@ -32,8 +32,9 @@
   ],
   "dependencies": {
     "gulp-util": "^2.2.0",
-    "through2": "^0.4.0",
-    "markdown-pdf": "^2.2.0"
+    "markdown-pdf": "^2.2.0",
+    "path": "^0.4.9",
+    "through2": "^0.4.0"
   },
   "devDependencies": {
     "mocha": "*"

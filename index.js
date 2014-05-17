@@ -1,9 +1,11 @@
 'use strict';
+var path = require('path');
 var gutil = require('gulp-util');
 var through = require('through2');
 var markdownpdf = require('markdown-pdf');
 
 module.exports = function (options) {
+	console.log(options);
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			this.push(file);
