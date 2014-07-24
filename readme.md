@@ -2,7 +2,7 @@
 
 > Markdown to PDF with [markdown-pdf](https://github.com/alanshaw/markdown-pdf)
 
-*Issues with the output should be reported on the marked [issue tracker](https://github.com/alanshaw/markdown-pdf/issues).*
+*Issues with the output should be reported on the markdown-pdf [issue tracker](https://github.com/alanshaw/markdown-pdf/issues).*
 
 
 ## Install
