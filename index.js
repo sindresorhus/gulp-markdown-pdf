@@ -19,7 +19,7 @@ module.exports = function (options) {
 		.from.string(file.contents.toString())
 		.to.buffer(function (err, buffer) {
 			if (err) {
-				this.emit('error', new gutil.PluginError('gulp-markdown-pdf', err));
+				this.emit('error', new gutil.PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
 			} else {
 				file.contents = buffer;
 				file.path = gutil.replaceExtension(file.path, '.pdf');

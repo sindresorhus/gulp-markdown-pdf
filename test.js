@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var gutil = require('gulp-util');
-var markdownpdf = require('./index');
+var markdownpdf = require('./');
 
 it('should compile Markdown to PDF', function (cb) {
 	this.timeout(5000);
