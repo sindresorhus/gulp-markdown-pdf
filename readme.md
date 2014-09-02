@@ -7,7 +7,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev gulp-markdown-pdf
 ```
 
@@ -35,4 +35,4 @@ See the markdown-pdf [options](https://github.com/alanshaw/markdown-pdf#options)
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

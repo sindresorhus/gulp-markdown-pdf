@@ -6,27 +6,26 @@ var markdownpdf = require('markdown-pdf');
 module.exports = function (options) {
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
-			this.push(file);
-			return cb();
+			cb(null, file);
+			return;
 		}
 
 		if (file.isStream()) {
-			this.emit('error', new gutil.PluginError('gulp-markdown-pdf', 'Streaming not supported'));
-			return cb();
+			cb(new gutil.PluginError('gulp-markdown-pdf', 'Streaming not supported'));
+			return;
 		}
 
 		markdownpdf(options)
 		.from.string(file.contents.toString())
 		.to.buffer(function (err, buffer) {
 			if (err) {
-				this.emit('error', new gutil.PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
-			} else {
-				file.contents = buffer;
-				file.path = gutil.replaceExtension(file.path, '.pdf');
+				cb(new gutil.PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
+				return;
 			}
 
-			this.push(file);
-			cb()
-		}.bind(this));
+			file.contents = buffer;
+			file.path = gutil.replaceExtension(file.path, '.pdf');
+			cb(null, file);
+		});
 	});
 };
