@@ -7,7 +7,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save-dev gulp-markdown-pdf
 ```
 
@@ -28,9 +28,9 @@ gulp.task('default', function () {
 
 ## API
 
-### markdownpdf(options)
+### markdownpdf([options])
 
-See the markdown-pdf [options](https://github.com/alanshaw/markdown-pdf#options).
+See the `markdown-pdf` [options](https://github.com/alanshaw/markdown-pdf#options).
 
 
 ## License
