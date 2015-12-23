@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "markdown-pdf": "^5.1.0",
+    "markdown-pdf": "^6.0.0",
     "through2": "^2.0.0"
   },
   "devDependencies": {
