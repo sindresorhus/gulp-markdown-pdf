@@ -1,21 +1,18 @@
-'use strict';
-var assert = require('assert');
-var gutil = require('gulp-util');
-var markdownpdf = require('./');
+import test from 'ava';
+import gutil from 'gulp-util';
+import pEvent from 'p-event';
+import m from '.';
 
-it('should compile Markdown to PDF', function (cb) {
-	this.timeout(5000);
+test(async t => {
+	const stream = m();
+	const promise = pEvent(stream, 'data');
 
-	var stream = markdownpdf();
-
-	stream.on('data', function (file) {
-		assert.equal(file.relative, 'fixture.pdf');
-		assert(/%PDF/.test(file.contents.toString()));
-		cb();
-	});
-
-	stream.write(new gutil.File({
+	stream.end(new gutil.File({
 		path: 'fixture.md',
-		contents: new Buffer('*foo*')
+		contents: Buffer.from('*foo*')
 	}));
+
+	const file = await promise;
+	t.is(file.relative, 'fixture.pdf');
+	t.regex(file.contents.toString(), /%PDF/);
 });
