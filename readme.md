@@ -20,7 +20,7 @@ const markdownPdf = require('gulp-markdown-pdf');
 
 gulp.task('default', () =>
 	gulp.src('intro.md')
-		.pipe(markdownpdf())
+		.pipe(markdownPdf())
 		.pipe(gulp.dest('dist'))
 );
 ```
