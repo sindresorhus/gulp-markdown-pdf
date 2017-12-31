@@ -1,13 +1,13 @@
 import test from 'ava';
-import gutil from 'gulp-util';
 import pEvent from 'p-event';
+import Vinyl from 'vinyl';
 import m from '.';
 
 test(async t => {
 	const stream = m();
 	const promise = pEvent(stream, 'data');
 
-	stream.end(new gutil.File({
+	stream.end(new Vinyl({
 		path: 'fixture.md',
 		contents: Buffer.from('*foo*')
 	}));
