@@ -1,7 +1,7 @@
 'use strict';
+const gutil = require('gulp-util');
 const through = require('through2');
 const markdownpdf = require('markdown-pdf');
-const PluginError = require('plugin-error');
 
 module.exports = options => {
 	return through.obj((file, enc, cb) => {
@@ -11,7 +11,7 @@ module.exports = options => {
 		}
 
 		if (file.isStream()) {
-			cb(new PluginError('gulp-markdown-pdf', 'Streaming not supported'));
+			cb(new gutil.PluginError('gulp-markdown-pdf', 'Streaming not supported'));
 			return;
 		}
 
@@ -19,12 +19,12 @@ module.exports = options => {
 			.from.string(file.contents.toString())
 			.to.buffer((err, buffer) => {
 				if (err) {
-					cb(new PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
+					cb(new gutil.PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
 					return;
 				}
 
 				file.contents = buffer;
-				file.extname = '.pdf';
+				file.path = gutil.replaceExtension(file.path, '.pdf');
 				cb(null, file);
 			});
 	});
