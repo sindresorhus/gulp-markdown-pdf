@@ -31,7 +31,7 @@
 		"phantomjs"
 	],
 	"dependencies": {
-		"markdown-pdf": "^8.0.0",
+		"markdown-pdf": "^9.0.0",
 		"plugin-error": "^1.0.0",
 		"through2": "^2.0.0"
 	},
