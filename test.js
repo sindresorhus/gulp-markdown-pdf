@@ -1,10 +1,10 @@
 import test from 'ava';
 import pEvent from 'p-event';
 import Vinyl from 'vinyl';
-import m from '.';
+import markdownPdf from '.';
 
 test(async t => {
-	const stream = m();
+	const stream = markdownPdf();
 	const promise = pEvent(stream, 'data');
 
 	stream.end(new Vinyl({

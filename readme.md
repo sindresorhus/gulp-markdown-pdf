@@ -1,8 +1,8 @@
 # gulp-markdown-pdf [![Build Status](https://travis-ci.org/sindresorhus/gulp-markdown-pdf.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-markdown-pdf)
 
-> Markdown to PDF with [markdown-pdf](https://github.com/alanshaw/markdown-pdf)
+> Markdown to PDF with [`markdown-pdf`](https://github.com/alanshaw/markdown-pdf)
 
-*Issues with the output should be reported on the markdown-pdf [issue tracker](https://github.com/alanshaw/markdown-pdf/issues).*
+*Issues with the output should be reported on the `markdown-pdf` [issue tracker](https://github.com/alanshaw/markdown-pdf/issues).*
 
 
 ## Install

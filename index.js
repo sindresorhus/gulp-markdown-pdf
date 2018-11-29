@@ -17,9 +17,9 @@ module.exports = options => {
 
 		markdownpdf(options)
 			.from.string(file.contents.toString())
-			.to.buffer((err, buffer) => {
-				if (err) {
-					cb(new PluginError('gulp-markdown-pdf', err, {fileName: file.path}));
+			.to.buffer((error, buffer) => {
+				if (error) {
+					cb(new PluginError('gulp-markdown-pdf', error, {fileName: file.path}));
 					return;
 				}
 
