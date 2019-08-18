@@ -18,7 +18,7 @@ $ npm install --save-dev gulp-markdown-pdf
 const gulp = require('gulp');
 const markdownPdf = require('gulp-markdown-pdf');
 
-gulp.task('default', () =>
+exports.default = () => (
 	gulp.src('intro.md')
 		.pipe(markdownPdf())
 		.pipe(gulp.dest('dist'))
@@ -28,11 +28,6 @@ gulp.task('default', () =>
 
 ## API
 
-### markdownPdf([options])
+### markdownPdf(options?)
 
 See the `markdown-pdf` [options](https://github.com/alanshaw/markdown-pdf#options).
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

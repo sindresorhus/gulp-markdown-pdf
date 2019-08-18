@@ -3,7 +3,7 @@ import pEvent from 'p-event';
 import Vinyl from 'vinyl';
 import markdownPdf from '.';
 
-test(async t => {
+test('main', async t => {
 	const stream = markdownPdf();
 	const promise = pEvent(stream, 'data');
 

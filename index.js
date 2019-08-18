@@ -4,14 +4,14 @@ const markdownpdf = require('markdown-pdf');
 const PluginError = require('plugin-error');
 
 module.exports = options => {
-	return through.obj((file, enc, cb) => {
+	return through.obj((file, encoding, callback) => {
 		if (file.isNull()) {
-			cb(null, file);
+			callback(null, file);
 			return;
 		}
 
 		if (file.isStream()) {
-			cb(new PluginError('gulp-markdown-pdf', 'Streaming not supported'));
+			callback(new PluginError('gulp-markdown-pdf', 'Streaming not supported'));
 			return;
 		}
 
@@ -19,13 +19,13 @@ module.exports = options => {
 			.from.string(file.contents.toString())
 			.to.buffer((error, buffer) => {
 				if (error) {
-					cb(new PluginError('gulp-markdown-pdf', error, {fileName: file.path}));
+					callback(new PluginError('gulp-markdown-pdf', error, {fileName: file.path}));
 					return;
 				}
 
 				file.contents = buffer;
 				file.extname = '.pdf';
-				cb(null, file);
+				callback(null, file);
 			});
 	});
 };
