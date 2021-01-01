@@ -1,4 +1,4 @@
-# gulp-markdown-pdf [![Build Status](https://travis-ci.org/sindresorhus/gulp-markdown-pdf.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-markdown-pdf)
+# gulp-markdown-pdf
 
 > Markdown to PDF with [`markdown-pdf`](https://github.com/alanshaw/markdown-pdf)
 
