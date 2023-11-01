@@ -1,6 +1,6 @@
 {
 	"name": "gulp-markdown-pdf",
-	"version": "8.0.0",
+	"version": "9.0.0",
 	"description": "Markdown to PDF",
 	"license": "MIT",
 	"repository": "sindresorhus/gulp-markdown-pdf",
