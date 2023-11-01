@@ -1,7 +1,8 @@
+import {Buffer} from 'node:buffer';
 import test from 'ava';
-import pEvent from 'p-event';
+import {pEvent} from 'p-event';
 import Vinyl from 'vinyl';
-import markdownPdf from '.';
+import markdownPdf from './index.js';
 
 test('main', async t => {
 	const stream = markdownPdf();
@@ -9,7 +10,7 @@ test('main', async t => {
 
 	stream.end(new Vinyl({
 		path: 'fixture.md',
-		contents: Buffer.from('*foo*')
+		contents: Buffer.from('*foo*'),
 	}));
 
 	const file = await promise;

@@ -1,31 +1,11 @@
-'use strict';
-const through = require('through2');
-const markdownpdf = require('markdown-pdf');
-const PluginError = require('plugin-error');
+import {promisify} from 'node:util';
+import markdownpdf from 'markdown-pdf';
+import {gulpPlugin} from 'gulp-plugin-extras';
 
-module.exports = options => {
-	return through.obj((file, encoding, callback) => {
-		if (file.isNull()) {
-			callback(null, file);
-			return;
-		}
-
-		if (file.isStream()) {
-			callback(new PluginError('gulp-markdown-pdf', 'Streaming not supported'));
-			return;
-		}
-
-		markdownpdf(options)
-			.from.string(file.contents.toString())
-			.to.buffer((error, buffer) => {
-				if (error) {
-					callback(new PluginError('gulp-markdown-pdf', error, {fileName: file.path}));
-					return;
-				}
-
-				file.contents = buffer;
-				file.extname = '.pdf';
-				callback(null, file);
-			});
+export default function gulpMarkdownPdf(options) {
+	return gulpPlugin('gulp-markdown-pdf', async file => {
+		file.contents = await promisify(markdownpdf(options).from.string(file.contents.toString()).to.buffer)();
+		file.extname = '.pdf';
+		return file;
 	});
-};
+}

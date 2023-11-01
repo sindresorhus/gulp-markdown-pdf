@@ -4,27 +4,24 @@
 
 *Issues with the output should be reported on the `markdown-pdf` [issue tracker](https://github.com/alanshaw/markdown-pdf/issues).*
 
-
 ## Install
 
+```sh
+npm install --save-dev gulp-markdown-pdf
 ```
-$ npm install --save-dev gulp-markdown-pdf
-```
-
 
 ## Usage
 
 ```js
-const gulp = require('gulp');
-const markdownPdf = require('gulp-markdown-pdf');
+import gulp from 'gulp';
+import markdownPdf from 'gulp-markdown-pdf';
 
-exports.default = () => (
+export default () => (
 	gulp.src('intro.md')
 		.pipe(markdownPdf())
 		.pipe(gulp.dest('dist'))
 );
 ```
-
 
 ## API
 
